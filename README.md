@@ -24,3 +24,8 @@ sudo apt update && sudo apt install terraform
     main.tf
     provider.tf
 
+* main.tf in this file we can add ami id 
+* amiID is any region it's same we can take always this amiid click on launch template 
+* ![Preview](./images/tf1.png) 
+* ![Preview](./images/tf2.png)
+
