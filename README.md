@@ -28,4 +28,31 @@ sudo apt update && sudo apt install terraform
 * amiID is any region it's same we can take always this amiid click on launch template 
 * ![Preview](./images/tf1.png) 
 * ![Preview](./images/tf2.png)
+  [Refer here](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#attributes-reference) 
+  for creating instances,vpc,subnets copy paste and change names in main.tf
+*next goto that folder 
+```
+terraform init
+terraform validate
+terraform apply
+
+```
+next see in my aws acnt
+![Preview](./images/tf3.png)
+![Preview](./images/tf4.png)
+![Preview](./images/tf5.png)
+![Preview](./images/tf6.png)
+
+```
+terraform destroy
+
+```
+check it again in aws vpc,subnet,instance all are deleted at a time with destory command.
+
+
+
+
+
+
+
 
