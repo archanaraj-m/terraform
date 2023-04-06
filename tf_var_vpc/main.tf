@@ -21,7 +21,7 @@ resource "aws_subnet" "subnet2" {
     aws_vpc.ntier
   ]
 }
-resource "aws_subnet" "db1" {
+resource "aws_subnet" "subnet3" {
   cidr_block        = var.ntier-db1-cidr
   availability_zone = "${var.region}a"
   vpc_id            = aws_vpc.ntier.id
@@ -29,7 +29,7 @@ resource "aws_subnet" "db1" {
     aws_vpc.ntier
   ]
 }
-resource "aws_subnet" "db2" {
+resource "aws_subnet" "subnet4" {
   cidr_block        = var.ntier-db2-cidr
   availability_zone = "${var.region}b"
   vpc_id            = aws_vpc.ntier.id
