@@ -5,3 +5,5 @@ resource "aws_vpc" "ntier" {
         Name = "ntier"
     }
 }    
+
+# configure
