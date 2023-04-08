@@ -5,35 +5,16 @@ resource "aws_vpc" "ntier" {
     Name = "ntier"
   }
 }
-resource "aws_subnet" "subnet1" {
-  cidr_block        = var.ntier-subnet1-cidr
-  availability_zone = "${var.region}a"
+resource "aws_subnet" "subnets" {
+  cidr_block        = var.ntier-subnet-cidrs[count.index]
+  availability_zone = "${var.region}${var.ntier-subnet-azs[count.index]}"
   vpc_id            = aws_vpc.ntier.id
   depends_on = [
     aws_vpc.ntier
   ]
-}
-resource "aws_subnet" "subnet2" {
-  cidr_block        = var.ntier-subnet2-cidr
-  availability_zone = "${var.region}b"
-  vpc_id            = aws_vpc.ntier.id
-  depends_on = [
-    aws_vpc.ntier
-  ]
-}
-resource "aws_subnet" "subnet3" {
-  cidr_block        = var.ntier-subnet3-cidr
-  availability_zone = "${var.region}a"
-  vpc_id            = aws_vpc.ntier.id
-  depends_on = [
-    aws_vpc.ntier
-  ]
-}
-resource "aws_subnet" "subnet4" {
-  cidr_block        = var.ntier-subnet4-cidr
-  availability_zone = "${var.region}b"
-  vpc_id            = aws_vpc.ntier.id
-  depends_on = [
-    aws_vpc.ntier
-  ]
+
+  tags = {
+    Name = "var.ntier-subnet-names[count.index]"
+  }
+
 }
