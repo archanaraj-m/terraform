@@ -15,9 +15,9 @@ variable "ntier-subnet-cidrs" {
 }
 variable "ntier-subnet-names" {
   type    = list(string)
-  default = ["subnet1","subnet2","subnet3","subnet4"]
+  default = ["subnet1", "subnet2", "subnet3", "subnet4"]
 }
 variable "ntier-subnet-azs" {
   type    = list(string)
-  default = ["a","b","a","b"]
+  default = ["a", "b", "a", "b"]
 }
