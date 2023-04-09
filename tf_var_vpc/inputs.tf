@@ -21,3 +21,15 @@ variable "ntier-subnet-azs" {
   type    = list(string)
   default = ["a", "b", "a", "b"]
 }
+variable "ntier-vpc-info" {
+  type      = object({
+    vpc_range = string,
+    subnet_names = list(string),
+    subnet_azs = list(string)  
+  })
+  default = {
+    vpc_range =  ["192.168.0.0/16"]
+    subnet_names = ["subnet1", "subnet2", "subnet3", "subnet4"]
+    subnet_azs = ["a", "b", "a", "b"]
+  }
+}
