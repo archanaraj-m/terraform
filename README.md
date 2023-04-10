@@ -49,6 +49,55 @@ terraform destroy
 ```
 check it again in aws vpc,subnet,instance all are deleted at a time with destory command.
 
+### created vpc,subnets
+----------------------
+
+* In terraform documentation created subnets and vpc's use that documentation code we can create the vpc's, subnets.
+* after goto that folder ' <terraform console>'
+* ![Preview](./images/tf7.png)
+* for creating subnets terrafrm console output
+
+``` 
+
+ > cidrsubnets("10.10.0.0/16" , 8, 4, 8, 4)
+tolist([
+  "10.10.0.0/24",
+  "10.10.16.0/20",
+  "10.10.32.0/24",
+  "10.10.48.0/20",
+])
+> exit
+
+```
+* Next change the variables in inputs file and values.tfvars execute
+  '<terraform console>'
+  ![Preview](./images/tf8.png)
+  ![Preview](./images/tf9.png)
+* Next use this command
+  
+```
+terraform apply -var-file ./values.tfvars
+
+terraform destroy
+
+```
+* for creating another 2 subnets change in values.tfvars file
+
+```
+ntier_vpc_info = {
+  subnet_names = ["subnet1", "subnet2", "subnet3", "subnet4", "subnet5", "subnet6"]
+  subnet_azs   = ["a", "b", "a", "b" , "a", "b"]
+  vpc_cidr     = "192.168.0.0/16"
+}
+
+```
+terraform apply -var-file ./values.tfvars
+
+yes
+
+* After that creating remaing two subnets
+
+'<terraform destroy>'
 
 
 
