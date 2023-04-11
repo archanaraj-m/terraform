@@ -6,7 +6,7 @@ Terraform
   sudo apt install awscli
   aws configure
 ```
-[Refer here](https://developer.hashicorp.com/terraform/downloads)
+ [Refer here](https://developer.hashicorp.com/terraform/downloads)
 
 * Next install terraform in that VM
 
@@ -108,8 +108,8 @@ terraform graph
 
 ```
 After that command used some code came in that {..} copy that and paste in graphviz website then graph came.
-[Preview](./images/tf10.png)
-[Preview](./images/tf11.png)
+![Preview](./images/tf10.png)
+![Preview](./images/tf11.png)
 
 * see the vm image list command is
 ```
@@ -117,6 +117,37 @@ aws vm image list --location 'euwest'
 
 ```
 
+### Ntier in AWS
+
+* making subnets private and public
+  first we can create internet gateway with ref google terraform internetgateway
+  [Referhere](https://registry.terraform.io/providers/hashicorp/aws/4.36.0/docs/resources/internet_gateway.html)
+  
+```
+  resource "aws_internet_gateway" "ntier_igw" {
+  vpc_id = aws_vpc.ntier.id
+  tags = {
+    Name = "ntier_igw"
+  }
+}
+
+```
+* Above resource paste in main.tf(network.tf)
+* After that terraform init and terraform fmt and terraform apply
+
+```
+terraform apply -var-file .\dev.tfvars
+
+```
+* ![Preview](./images/tf12.png)
+* ![Preview](./images/tf13.png)
+* ![Preview](./images/tf14.png)
+
+
+```
+terraform destroy
+
+```
 
 
 
