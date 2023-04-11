@@ -19,3 +19,7 @@ resource "aws_subnet" "subnets" {
   }
 
 }
+resource "local_file" "test" {
+  content  = "hello!"
+  filename = "${path.module}/test.txt"
+}
