@@ -24,7 +24,7 @@ resource "aws_subnet" "subnets" {
 
 
 resource "aws_internet_gateway" "ntier_igw" {
-  vpc_id = local.vpc_id
+  vpc_id = aws_vpc.ntier.id
   tags = {
     Name = "ntier-igw"
   }
@@ -35,7 +35,7 @@ resource "aws_internet_gateway" "ntier_igw" {
 
 
 resource "aws_route_table" "private" {
-  vpc_id = local.vpc_id
+  vpc_id = aws_vpc.ntier.id
   tags = {
     Name = "private"
   }
@@ -46,7 +46,7 @@ resource "aws_route_table" "private" {
 }
 
 resource "aws_route_table" "public" {
-  vpc_id = local.vpc_id
+  vpc_id = aws_vpc.ntier.id
   tags = {
     Name = "public"
   }
@@ -67,7 +67,7 @@ data "aws_subnets" "public" {
   }
   filter {
     name   = "vpc_id"
-    values = [local.vpc_id]
+    values = [aws_vpc.ntier.id]
   }
 
   depends_on = [
@@ -83,8 +83,8 @@ data "aws_subnets" "private" {
   }
 
   filter {
-    name   = "vpc-id"
-    values = [local.vpc_id]
+    name   = "vpc_id"
+    values = [aws_vpc.ntier.id]
   }
 
   depends_on = [
