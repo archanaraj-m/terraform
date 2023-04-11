@@ -149,6 +149,11 @@ terraform destroy
 
 ```
 
+### Creating route table(private,public)
+
+[Referhere](https://registry.terraform.io/providers/-/aws/latest/docs/resources/route_table)
+for route table association
+[Referhere](https://registry.terraform.io/providers/-/aws/latest/docs/resources/route_table_association)
 
 
 
