@@ -28,7 +28,7 @@ sudo apt update && sudo apt install terraform
 * amiID is any region it's same we can take always this amiid click on launch template 
 * ![Preview](./images/tf1.png) 
 * ![Preview](./images/tf2.png)
-  [Refer here](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#attributes-reference) 
+  [Referhere](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#attributes-reference) 
   for creating instances,vpc,subnets copy paste and change names in main.tf
 *next goto that folder 
 ```
@@ -99,7 +99,23 @@ yes
 
 '<terraform destroy>'
 
+### terraform graph
 
+[Referhere](https://dreampuf.github.io/GraphvizOnline/)
+
+```
+terraform graph
+
+```
+After that command used some code came in that {..} copy that and paste in graphviz website then graph came.
+[Preview](./images/tf10.png)
+[Preview](./images/tf11.png)
+
+* see the vm image list command is
+```
+aws vm image list --location 'euwest'
+
+```
 
 
 
