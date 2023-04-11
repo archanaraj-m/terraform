@@ -5,8 +5,8 @@ Terraform
   sudo apt-get update
   sudo apt install awscli
   aws configure
-
 ```
+[Refer here](https://developer.hashicorp.com/terraform/downloads)
 
 * Next install terraform in that VM
 
