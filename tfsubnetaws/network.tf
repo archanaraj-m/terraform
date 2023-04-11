@@ -25,4 +25,7 @@ resource "aws_internet_gateway" "ntier_igw" {
   tags = {
     Name = "ntier_igw"
   }
+  depends_on = [
+    aws_vpc.ntier
+  ]
 }

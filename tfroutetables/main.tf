@@ -12,12 +12,12 @@ resource "aws_subnet" "subnets" {
   count             = length(var.ntier_vpc_info.subnet_names)
   cidr_block        = cidrsubnet(var.ntier_vpc_info.vpc_cidr, 8, count.index)
   availability_zone = "${var.region}${var.ntier_vpc_info.subnet_azs[count.index]}"
-  vpc_id            = local.vpc_id
+  vpc_id            = aws_vpc.ntier.id
   depends_on = [
     aws_vpc.ntier
   ]
   tags = {
-    Name = var.ntier_vpc_info.subnet_names[count.index]
+    Name = "var.ntier_vpc_info.subnet_names[count.index]"
   }
 
 }
@@ -66,7 +66,7 @@ data "aws_subnets" "public" {
     values = var.ntier_vpc_info.public_subnets
   }
   filter {
-    name   = "vpc-id"
+    name   = "vpc_id"
     values = [local.vpc_id]
   }
 
