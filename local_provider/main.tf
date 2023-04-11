@@ -9,5 +9,5 @@ terraform {
 
 resource "local_file" "test" {
   content  = "hello terraform!"
-  filename = "C:\QTtraining\terraform\local_provider/test.txt"
+  filename = "C:/QTtraining/terraform/local_provider/test.txt"
 }
