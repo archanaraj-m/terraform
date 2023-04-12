@@ -31,7 +31,7 @@ resource "aws_internet_gateway" "ntier_igw" {
 }
 
 resource "aws_route_table" "private" {
-  vpc_id = local.vpc_id
+  vpc_id = ntier_vpc_info.vpc_id
   tags = {
     Name = "private"
   }
@@ -42,7 +42,7 @@ resource "aws_route_table" "private" {
 }
 
 resource "aws_route_table" "public" {
-  vpc_id = local.vpc_id
+  vpc_id = ntier_vpc_info.vpc_id
   tags = {
     Name = "public"
   }
@@ -62,8 +62,8 @@ data "aws_subnets" "public" {
     values = var.ntier_vpc_info.public_subnets
   }
   filter {
-    name   = "vpc-id"
-    values = [local.vpc_id]
+    name   = "ntier_vpc_info"
+    values = [ntier_vpc_info.vpc_id]
   }
 
   depends_on = [
@@ -79,8 +79,8 @@ data "aws_subnets" "private" {
   }
 
   filter {
-    name   = "vpc-id"
-    values = [local.vpc_id]
+    name   = "ntier_vpc_info"
+    values = [ntier_vpc_info.vpc_id]
   }
 
   depends_on = [

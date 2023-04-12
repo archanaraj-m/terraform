@@ -1,19 +1,18 @@
-terraform {
-  required_version = ">= 1.0.0"
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 4.47.0"
-    }
+module "vpc1" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "4.0.1"
+  name = "myvpc"
+  cidr = "192.168.0.0/16"
+  providers = {
+    aws = aws.paris
   }
 }
-
-
-provider "aws" {
-  region = "eu-west"
-  alias = "eu-west-1a"
-}
-provider "aws" {
-  region = "eu-east"
-  alias = "eu-east-1a"
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "4.0.1"
+  name = "myvpc"
+  cidr = "192.168.0.0/16"
+  providers = {
+    aws = aws.Virginia
+  }
 }
