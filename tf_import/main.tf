@@ -19,6 +19,12 @@ resource "aws_subnet" "sub33a" {
 resource "aws_subnet" "sub43bpublic" {
   cidr_block = "192.168.3.0/24"
 }
-resource "aws_subnet" "sub43bpublic" {
-  cidr_block = "192.168.3.0/24"
+resource "aws_lb" "loadbal1" {
+  load_balancer_type = "application"
+}
+resource "aws_lb_target_group" "targetgrp1" {
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = vpc-0f87db502b31e8994
+  arn = "arn:aws:elasticloadbalancing:eu-west-3:760450597737:targetgroup/targetgrp1/4ced3800cd4095ec"
 }

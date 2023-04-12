@@ -5,7 +5,7 @@
 * it's directly create vpc and more in that create 4subnets with(192.168.0.0/24)
 * next create 2 instances with that vpc and in that enable public access
 
-
+[Referhere](https://developer.hashicorp.com/terraform/cli/import/usage)
 
 
 
