@@ -1,5 +1,6 @@
 ### create manually vpc's ,subnets,2 vm's load balancer and import terraform
 ![Preview](./images/task2.png)
+C:\QTtraining\terraform\teamsmeeting\tf_import
 * create manually first vpc(192.168.0.0/16)
 * and next create 4 subnets with that vpc
 * it's directly create vpc and more in that create 4subnets with(192.168.0.0/24)
@@ -42,7 +43,7 @@ terraform import aws_tg.targetgrp1 arn:aws:elasticloadbalancing:eu-west-3:760450
 * After importing check once in our AWS account and delete all manually and terraform destory
   
 ### activity2
-
+   C:\QTtraining\terraform\teamsmeeting\activity2
 * for this activity first we can create vpc through terraform and in provider we can use multi provider and multi regions with alias
 [Referhere](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest)
 
@@ -58,13 +59,26 @@ check in two regions
 ![Preview](./images/task2img8act2.png)
 
 ### activity3
+C:\QTtraining\terraform\teamsmeeting\activity3
+* 1.create a network,add subnet one,add subnet two,  rename the subnet one with web and two with app with terraform state mv,
+Now add one more subnet db ,remove the state of db using terraform state mv.
+  
+-----------------------------
 
-* creating
-
+* first we can create one vpc and two subnets with name of one,two.
+* next terraform init
+* terraform apply
+*  check once in tfstate two subnet names one,two
+*  then next command 
 for moving subnet.one to subnet.web
-
+```
 terraform state mv aws_subnet.one aws_subnet.web
 
-
-for removing db subnet command
+```
+* next check tfstate file that subnet names are change
+* Next create another subnet db
+* for removing db subnet command
+```
 terraform state rm aws_subnet.db 
+
+```
