@@ -30,7 +30,7 @@ sudo apt update && sudo apt install terraform
 * ![Preview](./images/tf2.png)
   [Referhere](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#attributes-reference) 
   for creating instances,vpc,subnets copy paste and change names in main.tf
-*next goto that folder 
+* next goto that folder 
 ```
 terraform init
 terraform validate
@@ -53,9 +53,9 @@ check it again in aws vpc,subnet,instance all are deleted at a time with destory
 ----------------------
 
 * In terraform documentation created subnets and vpc's use that documentation code we can create the vpc's, subnets.
-* after goto that folder ' <terraform console>'
+* after goto that folder ``<terraform console>``
 * ![Preview](./images/tf7.png)
-* for creating subnets terrafrm console output
+* for creating subnets terraform console output
 
 ``` 
 
@@ -70,7 +70,7 @@ tolist([
 
 ```
 * Next change the variables in inputs file and values.tfvars execute
-  '<terraform console>'
+  ``terraform console``
   ![Preview](./images/tf8.png)
   ![Preview](./images/tf9.png)
 * Next use this command
@@ -97,7 +97,7 @@ yes
 
 * After that creating remaing two subnets
 
-'<terraform destroy>'
+``terraform destroy``
 
 ### terraform graph
 
