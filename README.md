@@ -18,7 +18,7 @@ sudo apt update && sudo apt install terraform
 
 ```
 
-* we can create a folder with any name in that create files with this names 
+* we can create a folder with any name in that create files with this names ``mkdir tf`` 
     input.tf
     output.tf
     main.tf
@@ -58,7 +58,6 @@ check it again in aws vpc,subnet,instance all are deleted at a time with destory
 * for creating subnets terraform console output
 
 ``` 
-
  > cidrsubnets("10.10.0.0/16" , 8, 4, 8, 4)
 tolist([
   "10.10.0.0/24",
